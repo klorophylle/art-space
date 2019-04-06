@@ -1,0 +1,953 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END OF MEYER RESET */
+
+/* GENERAL */
+
+img {
+	max-width: 100%;
+}
+
+.container {
+    width: 60rem;
+	margin: 0 auto;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+section {
+	padding: 5.5rem 0;
+}
+
+section:nth-of-type(odd) {
+	background-color: #f5f5f5;
+	border-top: 0.02rem solid #e4e4e4;
+	border-bottom: 0.02rem solid #e4e4e4;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.opacity {
+	color: #453f3f;
+	font-weight: 600;
+	opacity: 0.7;
+}
+
+.carrousel {
+	position: relative;
+}
+
+h2 {
+	font-size: 1.6rem;
+	line-height: 2.5rem;
+}
+
+/* padding on the screen so that the images fit in perfectly */
+/* px/16 => turns into rem */
+/* relative position => arrows'absolute position */
+#ecran .carrousel {
+	background: url(../img/large-cinema-display.png) no-repeat;
+	padding-top: 2.4375rem;
+	padding-right: 2.375rem;
+	padding-bottom: 5rem;
+	padding-left: 2.375rem;
+}
+
+/* [class^='...'] => selects all the classes beginning with '...' */
+/* absolute position to get the arrows out of the flow */
+/* calc(50% - 44px) => put the arrows (arrow height = 44px) in the middle of the screen */
+.carrousel [class^='arrow-'] {
+	position: absolute;
+	top: calc(50% - 2.75rem);
+}
+
+/* moves the arrow out the flow */
+.carrousel .arrow-left {
+	left: -2.1875rem;
+}
+.carrousel .arrow-right {
+	right: -2.1875rem;
+}
+
+/* FONTS !!!! */
+
+/* NAV */
+nav .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 0.5rem;
+	padding-bottom: 1.5rem;
+    height: 5rem;
+}
+
+ nav ul {
+	display: flex;
+	flex-direction: row;
+}
+
+nav ul li a {
+	padding: 0em 1rem 1.4rem 1rem;
+	text-decoration: none;
+	color: #000000;
+	font-size: 0.8rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	opacity: 0.3;
+}
+
+nav ul li a:hover {
+	opacity: 1;
+	transition-delay: 200ms
+}
+
+nav ul li .active {
+	opacity: 1;
+}
+
+/* HEADER */
+header.accueil {
+    background-image: url(../img/hero-tour.jpg);
+	background-size: cover;
+}
+
+header.prix {
+	background-image: url(../img/hero-pricing.jpg);
+	background-size: cover;
+	height: 35rem;
+	position: relative;
+}
+
+header .container {
+	text-align: center;
+	color: #f5f5f5;
+	padding-bottom: 13rem;
+}
+
+header h1 {
+	padding-top: 11rem;
+	font-size: 2.8rem;
+	line-height: 4rem;
+	letter-spacing: 0.1rem;
+	font-weight: bold;
+}
+
+header h1::before {
+	display: block;
+	margin: 0 auto 1.5rem auto;
+	content: "";
+	background-color: #f5f5f5;
+	width: 20rem;
+	height: 0.3rem;
+}
+
+header .container p {
+	margin: 1rem auto 4.5rem auto;
+	font-family: 'Merriweather', serif;
+	font-style: italic;
+	font-size: 1rem;
+}
+
+header #btn_jaune {
+	border-radius: 1.875rem;
+	border-color: transparent;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: #030003;
+	font-size: 1rem;
+	font-weight: bold;
+	background: #fff186;
+	padding: 1.2rem 2.1rem 1.2rem 2.1rem;
+	text-decoration: none;
+}
+
+header #btn_transparent {
+	border-color: transparent;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: #f5f5f5;
+	font-size: 0.9rem;
+	background: transparent;
+	margin-left: 1rem;
+	text-decoration: none;
+}
+
+.accueil .fa-youtube {
+	font-size: 1.5rem;
+	padding-left: 0.5rem;
+	vertical-align: sub;
+}
+
+header.accueil aside {
+	position: absolute;
+	top: 44rem;
+    left: 75rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	border-right: solid 0.1rem;
+	padding-right: 1rem;
+	font-size: 0.8rem;
+	font-family: 'Open Sans', 'Noto Sans TC', sans-serif;
+	color: #D3D3D3;
+}
+
+header.accueil aside p#sara {
+	padding-bottom: 0.5rem;
+	color: #f5f5f5;
+	font-weight: bold;
+}
+
+header.prix h1 {
+	margin-bottom: 2.8rem;
+}
+
+header.prix #btn_noir {
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 1.75rem;
+	border-color: transparent;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: #f5f5f5;
+	font-size: 1rem;
+	font-weight: bold;
+	background: #000000;
+	padding: 1.3rem 2.1rem 1.3rem 2.1rem;
+	text-decoration: none;
+}
+
+/* SECTION PRESS LOGO*/
+#press .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	opacity: 0.4;
+	font-size: 0.7rem;
+	font-weight: bold;
+	letter-spacing: 0.2rem;
+}
+
+#press {
+	padding: 2rem 0;
+}
+
+/* SECTION ECRAN SLIDER */
+#ecran {
+	padding: 0;
+	margin-top: 5.5rem;
+}
+
+#ecran h2::after {
+	display: block;
+	margin: 0.5rem auto 1rem auto;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.1rem;
+}
+
+#ecran p {
+	margin: 0 12rem 3rem 12rem;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* removes the margin/border/shadow inside the screen */
+#ecran .bx-wrapper {
+	margin-bottom: 0;
+	box-shadow: 0;
+	border: none;
+}
+
+/* SECTION PAGES */
+#pages {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+#pages h2::after {
+	display: block;
+	margin: 0.5rem auto 1rem auto;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.1rem;
+}
+
+#pages p {
+	margin: 0 12rem 3rem 12rem;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* SECTION SURFING */
+#surfing .container h2::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0.5rem 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.1rem;
+}
+
+#surfing .container p {
+	width: 67%;
+	margin: 0 5rem 4rem 0;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* SECTION GALLERIES */
+#galleries h2::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0.5rem 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.13rem;
+}
+
+#galleries p {
+	width: 67%;
+	margin: 0 0 3rem 0;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* SECTION STATE-OF-THE-ART */
+#state h2::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0.5rem 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.1rem;
+}
+
+#state p {
+	width: 67%;
+	margin-bottom: 2rem;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+.sprite_top {
+	background-image: url(../img/sqsp-browser-yourbrand.png);
+	background-size: cover;
+	height: 2.6875rem;
+}
+
+.sprite_bottom {
+	background-image: url(../img/sqsp-browser-yourbrand.png);
+	background-size: cover;
+	background-position-y: -3.125rem;
+	height: 1.3125rem;
+	margin-bottom: 1rem;
+}
+
+.bx-wrapper {
+	margin-bottom: 0;
+	border: none;
+}
+
+#caption {
+	color: #808080;
+	font-style: italic;
+	font-size: 0.8rem;
+}
+
+#state #networks {
+	display: flex;
+}
+
+#state #networks h3 {
+	margin-top: 3rem;
+	font-size: 1rem;
+}
+
+#state #networks p {
+	width: 89%;
+	padding: 1rem 0 1rem 0;
+	margin: 0;
+	font-size: 0.8rem;
+	line-height: 1.5rem;
+}
+
+#state #networks a {
+	margin-top: 1rem;
+	opacity: 0.6;
+}
+
+/* SECTION CUSTOM */
+#custom .container {
+	margin-bottom: 3.5rem;
+}
+
+#custom h2::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0.5rem 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.1rem;
+}
+
+#custom p {
+	width: 67%;
+	margin: 0 0 2rem 0;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* SECTION MOBILE */
+#mobile .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#mobile {
+	padding: 7rem 0 2rem 0;
+}
+
+#mobile h3 {
+	padding-top: 7rem;
+	font-size: 1.3rem;
+	line-height: 3rem;
+}
+
+#mobile h3::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 12rem;
+	height: 0.1rem;
+}
+
+#mobile p {
+	margin: 0 0 1rem 0;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* SECTION CONNECT */
+#connect .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+#connect h2::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0.5rem 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.13rem;
+}
+
+#connect p {
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+#connect img {
+	padding-top: 1rem;
+}
+
+#connect #import {
+	width: 34%;
+	padding: 16rem 2rem 0 3rem;
+}
+
+#connect #import h4 {
+	padding-bottom: 1rem;
+	font-size: 1rem;
+}	
+
+#connect #import p {
+	padding-bottom: 3rem;
+	line-height: 1.5rem;
+	font-size: 0.8rem;
+}
+
+/* SECTION POWERFUL */
+#powerful .container {
+	display: flex;
+}
+
+#powerful #comment {
+	width: 75%;
+	margin: 5rem 0 0 4rem;
+}
+
+#powerful h3 {
+	font-size: 1.3rem;
+	line-height: 3rem;
+}
+
+#powerful h3::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 12rem;
+	height: 0.13rem;
+}
+
+#powerful img {
+	padding-right: 2rem;
+	border-right: 0.02rem solid #e4e4e4;
+}
+
+#powerful p {
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+/* SECTION REAL-TIME */
+#real .container h2::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0.5rem 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 18rem;
+	height: 0.13rem;
+}
+
+#real p {
+	width: 67%;
+	margin-bottom: 2rem;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+#real .sprite_top {
+	background-image: url(../img/sqsp-browser-yourbrand.png);
+	background-size: cover;
+	height: 2.6875rem;
+}
+
+#real .sprite_bottom {
+	background-image: url(../img/sqsp-browser-yourbrand.png);
+	background-size: cover;
+	background-position-y: -3.125rem;
+	height: 1.3125rem;
+	margin-bottom: 1rem;
+}
+
+/* SECTION SEARCH */
+#search .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+#search article {
+	width: 45%;
+}
+
+#search #rob {
+	margin-right: 1.5rem;
+}
+
+#search .container h3 {
+	font-size: 1.3rem;
+	line-height: 3rem;
+}
+
+#search h3::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 12rem;
+	height: 0.1rem;
+}
+
+#search p {
+	margin: 0 0 4rem 0;
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+#search #rob figure {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 4rem;
+	border-top-left-radius: 3.125rem;
+	border-bottom-left-radius: 3.125rem;
+	margin-bottom: 3rem;
+	background-color: #58cb8e;
+	color: #f5f5f5;
+	font-size: 1rem;
+}
+
+#search #rob figure img {
+	border-radius: 6.25rem;
+}
+
+#search figure figcaption {
+	border-right: solid 0.1rem;
+	padding: 0.5rem 1rem 0.5rem 0.8rem;
+	text-align: center;
+}
+
+#search #seomoz {
+	padding: 0 2rem 0 0;
+	width: 6rem;
+	height: auto;
+}
+
+#search blockquote {
+	width: 75%;
+	padding-left: 2.5rem;
+	font-style: italic;
+	font-family: 'Merriweather', 'Helvetica', 'Arial';
+	color: #808080;
+	font-size: 0.7rem;
+	line-height: 1.8rem;
+}
+
+#search .fa-quote-left:before {
+	margin-top: 2rem;
+	font-size: 1.5rem;
+	color: #808080;
+}
+
+/* SECTION CLOUD */
+#cloud {
+	background-color: #FFFFFF;
+	padding-bottom: 1rem;
+}
+
+#cloud article {
+	width: 45%;
+}
+
+#cloud .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+#cloud h3 {
+	font-size: 1.2rem;
+	line-height: 3rem;
+}
+
+#cloud h3::after {
+	display: block;
+	align-items: flex-start;
+	margin: 0 0 1rem 0;
+	content: "";
+	background-color: #000000;
+	width: 12rem;
+	height: 0.1rem;
+}
+
+#cloud p {
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+	color: #808080;
+}
+
+#cloud article h3 .free {
+	padding: 0.6rem;
+	margin-left: 1.2rem;
+	border-radius: 0.25rem;
+	background-color: #58cb8e;
+	color: #F5F5F5;
+	font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+	background-color: #181818;
+	padding: 5rem 0 11rem 0;
+}
+
+footer .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer h5 {
+	padding-bottom: 1.5rem;
+	font-size: 0.8rem;
+	color: #F5F5F5;
+}
+
+footer ul li{
+	padding-bottom: 0.7rem;
+	font-size: 0.8rem;
+}
+
+footer a {
+	text-decoration: none;
+	color: #555555;
+}
+
+footer a:hover {
+	color: #58cb8e;
+	transition-delay: 100ms;
+}
+
+footer .container aside #btn_blanc {
+	background: #e5e5e5;
+	padding: 1.1rem 3.2rem 1.1rem 3.2rem;
+	text-decoration: none;
+	border-radius: 1.75rem;
+	border-color: transparent;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: #030003;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+footer aside ul {
+	margin: 3rem 0 1.3rem 0;
+	color: #808080;
+}
+footer aside ul li {
+	font-size: 0.9rem;
+}
+
+/***              ***/
+/*** PAGE PRICING ***/
+/***              ***/
+
+/* SECTION PRICING */
+#pricing {
+	background-color: #FFFFFF;
+}
+
+#pricing .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* #STANDARD CODE */
+#pricing #standard {
+	height: 17rem;
+}
+
+#pricing #standard ul {
+	height: 3.8rem;
+	padding: 1rem 0 10rem 0;
+	background-color: #f7f7f7;
+}
+
+/* TOOLTIP */
+.tooltip {
+	display: none;
+	position: absolute;
+	z-index: 20; /* allows the tooltip to be over the rest */
+	background-color: #000000;
+	opacity: 0.9;
+	border-radius: 2%;
+	max-width: 30%;
+	height: 35%;
+}
+
+/* Possible to do that through jQuery */
+.popup li:hover .tooltip {
+	display: block;
+}
+
+.tooltip h5 {	
+	padding: 1.2rem 0 0 2.6rem;
+	text-align: left;
+	color: #F5F5F5;
+}
+
+.tooltip p {	
+	text-align: left;
+	padding: 0 1.5rem 0 2.6rem;
+	color: #D3D3D3;
+	font-size: 0.9rem;
+	line-height: 1.1rem;
+}
+
+.tooltip .i {
+	padding: 0.7rem 0 0 1rem;
+	float: left;
+	font-family: 'Cormorant Upright', 'Aref Ruqaa', serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 2.1rem;
+	color: #f5f5f5;
+}
+
+/* #STANDARD AND #UNLIMITED SHARED CODE*/
+#pricing {
+	padding-bottom: 2rem;
+	border-bottom: none;
+}
+
+#pricing #standard, #unlimited {
+	width: 47%;
+	background-color: #191919;
+	text-align: center;
+}
+
+#pricing  #standard h3, #unlimited h3 {
+	display: inline-block;
+	border-bottom: solid 0.1rem #f5f5f5;
+	margin-top: 2rem;
+	font-size: 1.3rem;
+	line-height: 3.2rem;
+	letter-spacing: 0.6rem;
+	color: #f5f5f5;
+}
+
+#pricing #standard p, #unlimited p {
+	margin: 1rem 0 1rem 0;
+	color: #ffffff;
+}
+
+#pricing #standard .dollar, #unlimited .dollar {
+	vertical-align: top;
+}
+
+#pricing #standard p em, #unlimited p em {
+	font-size: 0.7rem;
+	color: #636363;
+}
+
+#pricing #standard ul li, #unlimited ul li {
+	padding: 0.9rem 0 0.9rem 0;
+	border-bottom: solid 0.09rem #eaeaea;
+	color: #959394;
+	font-size: 0.9rem;
+}
+
+#pricing #standard p .taille, #unlimited p .taille {
+	font-size: 7rem;
+	color: #ffffff;
+}
+
+.free {
+	background-color: #58cb8e;
+	border-radius: 50%;
+	padding: 0.8rem 0.4rem 0.8rem 0.4rem;
+	font-size: 0.6rem;
+	color: #F5F5F5;
+}
+
+/* #UNLIMITED CODE */
+#pricing #unlimited {
+	position: relative;
+}
+
+#pricing #unlimited ul {
+	height: 3.8rem;
+	padding: 1rem 0 21rem 0;
+	background-color: #f7f7f7;
+}
+
+#pricing .container #unlimited #most {
+	width: 10%;
+	position: absolute;
+	top: -1.5rem;
+	right: -1.5rem;
+	background-color: #58cb8e;
+	border-radius: 50%;
+	padding: 1.2rem 0.4rem 1.2rem 0.4rem;
+	font-size: 0.6rem;
+	color: #F5F5F5;
+}
+
+/* SECTION FAQ */
+#faq .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+#faq #faq_un, #faq_deux {
+	width: 47%;
+}
+
+#faq h6 {
+	display: inline-block;
+	border-bottom: solid 0.15rem #000000;
+	font-weight: bold;
+	font-size: 1rem;
+	line-height: 2.4rem;
+}
+
+#faq p {
+	margin: 1rem 0 2rem 0;
+	line-height: 1.7rem;
+	color: #808080;
+	font-size: 0.9rem;
+}
+
+#faq .help {
+	color: #58cb8e;
+	text-decoration: none;
+}
